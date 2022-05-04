@@ -11,8 +11,9 @@ def guess_my_number():
     elif request.method == 'POST':
         min_val = int(request.form.get('min_val'))
         max_val = int(request.form.get('max_val'))
-        guess = int(request.form.get("guess", 500))
         user_answer = request.form.get('user_answer')
+        guess = int(request.form.get("guess", 500))
+
         if user_answer == "YOU WIN":
             return render_template('WIN.html', guess=guess)
         elif user_answer == 'TOO SMALL':
